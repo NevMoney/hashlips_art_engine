@@ -25,15 +25,18 @@ const solanaMetadata = {
 // If you have selected Solana then the collection starts from 0 automatically
 const layerConfigurations = [
   {
-    growEditionSizeTo: 2000,
+    growEditionSizeTo: 10,
     layersOrder: [
       { name: 'Background' },
+      { name: 'Moon' },
+      { name: 'Bottom Curve' },
       {
         name: 'Face',
         blendMode: MODE.hardLight,
       },
       { name: 'Glasses' },
-      { name: 'Shine' },
+      { name: 'Helmet' },
+      { name: 'Goo' },
     ],
   },
 ]
@@ -49,7 +52,7 @@ const format = {
 }
 
 const gif = {
-  export: true,
+  export: false,
   repeat: 0,
   quality: 100,
   delay: 500,
