@@ -13,7 +13,7 @@ const baseUri = 'https://ipfs.io/ipfs/'
 const solanaMetadata = {
   symbol: 'II',
   seller_fee_basis_points: 1000, // Define how much % you want from secondary market sales 1000 = 10%
-  external_url: 'https://www.1dealaway.com/nft',
+  external_url: 'https://1dealaway.com/nft-collection/',
   creators: [
     {
       address: '0xb0F6d897C9FEa7aDaF2b231bFbB882cfbf831D95',
@@ -33,6 +33,7 @@ const layerConfigurations = [
         blendMode: MODE.hardLight,
       },
       { name: 'Glasses' },
+      { name: 'Shine' },
     ],
   },
 ]
