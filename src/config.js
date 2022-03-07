@@ -8,7 +8,7 @@ const network = NETWORK.eth
 const namePrefix = 'Intelligent Investors'
 const description =
   'Ingelligent investors are passionate about investing in themselves, always learning, and finding assets that have a potential to improve our lives, wealth and contribute to others.'
-const baseUri = 'https://ipfs.io/ipfs/'
+const baseUri = 'ipfs://CID'
 
 const solanaMetadata = {
   symbol: 'II',
@@ -25,17 +25,18 @@ const solanaMetadata = {
 // If you have selected Solana then the collection starts from 0 automatically
 const layerConfigurations = [
   {
-    growEditionSizeTo: 10,
+    growEditionSizeTo: 10000,
     layersOrder: [
       { name: 'Background' },
+      { name: 'Top Curve' },
       { name: 'Moon' },
       { name: 'Bottom Curve' },
       {
-        name: 'Face',
+        name: 'Person',
         blendMode: MODE.hardLight,
       },
       { name: 'Glasses' },
-      { name: 'Helmet' },
+      { name: 'Reflection' },
       { name: 'Goo' },
     ],
   },
@@ -55,7 +56,7 @@ const gif = {
   export: false,
   repeat: 0,
   quality: 100,
-  delay: 500,
+  delay: 250,
 }
 
 const text = {
@@ -72,7 +73,7 @@ const text = {
 }
 
 const pixelFormat = {
-  ratio: 15 / 128,
+  ratio: 27 / 128,
 }
 
 const background = {
@@ -91,14 +92,14 @@ const rarityDelimiter = '#'
 const uniqueDnaTorrance = 10000
 
 const preview = {
-  thumbPerRow: 5,
+  thumbPerRow: 100,
   thumbWidth: 50,
   imageRatio: format.height / format.width,
   imageName: 'preview.png',
 }
 
 const preview_gif = {
-  numberOfImages: 5,
+  numberOfImages: 30,
   order: 'ASC', // ASC, DESC, MIXED
   repeat: 0,
   quality: 100,

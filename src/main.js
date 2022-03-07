@@ -35,7 +35,7 @@ let hashlipsGiffer = null
 
 const buildSetup = () => {
   if (fs.existsSync(buildDir)) {
-    fs.rmdirSync(buildDir, { recursive: true })
+    fs.rmSync(buildDir, { recursive: true })
   }
   fs.mkdirSync(buildDir)
   fs.mkdirSync(`${buildDir}/json`)
@@ -133,13 +133,12 @@ const addMetadata = (_dna, _edition) => {
   let tempMetadata = {
     name: `${namePrefix} #${_edition}`,
     description: description,
-    image: `${baseUri}/${_edition}.png`,
+    image: `${baseUri}/${_edition}.png`, //changed by Nev
     dna: sha1(_dna),
     edition: _edition,
     date: dateTime,
     ...extraMetadata,
     attributes: attributesList,
-    // compiler: "HashLips Art Engine",
   }
   if (network == NETWORK.sol) {
     tempMetadata = {
@@ -372,7 +371,7 @@ const startCreating = async () => {
             hashlipsGiffer = new HashlipsGiffer(
               canvas,
               ctx,
-              `${buildDir}/gifs/${abstractedIndexes[0]}.gif`,
+              `${buildDir}/gifs/gif${abstractedIndexes[0]}.gif`,
               gif.repeat,
               gif.quality,
               gif.delay,
@@ -398,6 +397,7 @@ const startCreating = async () => {
           debugLogs
             ? console.log('Editions left to create: ', abstractedIndexes)
             : null
+
           saveImage(abstractedIndexes[0])
           addMetadata(newDna, abstractedIndexes[0])
           saveMetaDataSingleFile(abstractedIndexes[0])
